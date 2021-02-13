@@ -4,3 +4,7 @@
     background-position: center;
     height: 350px;
 }
+
+.tooltip-inner{
+    max-width: 300px;
+}
