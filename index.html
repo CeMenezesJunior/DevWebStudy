@@ -32,7 +32,7 @@
                      <a class="dropdown-item" href="#">Livrarias</a>
                   </div>
                </div>
-               <a class="nav-link nav-item" href="#">Reservas</a>
+               <a class="nav-link nav-item" href="#reservamodal" data-toggle="modal">Reservas</a>
                <a class="nav-link nav-item" href="#header">Contato</a>
             </div>
             <div class="navbar-nav">
@@ -81,6 +81,101 @@
          </span>
       </a>
    </div>
+
+   <div class="modal fade" id="reservamodal">
+      <div class="modal-dialog modal-lg">
+         <div class="modal-content">
+            <div class="modal-header">
+               <span class="modal-title">Reserva de Passeios e Excursões</span>
+               <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                  <span aria-hidden="true">&times;</span> 
+               </button>
+            </div>
+            <div class="modal-body">
+               <form action="">
+                  <fieldset class="form-group">
+                     <legend class="font-weight-bold">Informações Pessoais</legend>
+                     <div class="form-group row">
+                        <label for="nome" class="col-form-label col-lg-2">Nome</label>
+                        <div class="col-lg-10">
+                           <input type="text" class="form-control is-valid" placeholder="Nome" name="nome" id="nome">
+                        </div>
+                     </div>
+                     <div class="form-group row">
+                        <label class="col-form-label col-lg-2">Sexo</label>
+                        <div class="col-lg-10" style="padding-top: 7px;">
+                           <div class="form-check form-check-inline">
+                              <input type="radio" id="sexo-masc" name="sexo" value="M" class="form-check-input">
+                              <label for="sexo-masc" class="form-check-label">Masculino</label>
+                           </div>
+                           <div class="form-check form-check-inline">
+                              <input type="radio" id="sexo-fem" name="sexo" value="F" class="form-check-input">
+                              <label for="sexo-fem" class="form-check-label">Feminino</label>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="form-group row">
+                        <label for="endereco" class="col-form-label col-lg-2">Endereço</label>
+                        <div class="col-lg-10">
+                           <input type="text" class="form-control is-invalid" name="endereco" placeholder="Endereço" id="endereco">
+                           <div class="invalid-feedback">
+                              Este campo deve ser informado
+                           </div>
+                        </div>
+                     </div>
+                  </fieldset>
+                  <fieldset class="form-group">
+                     <legend class="font-weight-bold">Informações de Passeios e Excursões</legend>
+                     <div class="form-group row">
+                        <label for="passeio" class="col-form-label col-lg-2">Passeios</label>
+                        <div class="col-lg-10">
+                           <select class="form-control" id="passeio" name="passeio" multiple>
+                              <option value="1">Arcos da Lapa</option>
+                              <option value="2">Ciclovia</option>
+                              <option value="3">Copacabana</option>
+                              <option value="4">Cristo Redentor</option>
+                              <option value="5">Maracanã</option>
+                              <option value="6">Pão de Açucar</option>
+                           </select>
+                        </div>
+                     </div>
+                     <div class="form-group row">
+                        <label class="col-form-label col-lg-2">Excursões</label>
+                        <div class="col-lg-10">
+                           <div class="form-check">
+                              <input type="checkbox" class="form-check-input" name="ilha" id="ilha">
+                              <label class="form-check-label" for="ilha">
+                                 Ilha Grande
+                              </label>
+                           </div>
+                           <div class="form-check">
+                              <input type="checkbox" class="form-check-input" name="paraty" id="paraty">
+                              <label class="form-check-label" for="paraty">
+                                 Paraty
+                              </label>
+                           </div>
+                           <div class="form-check">
+                              <input type="checkbox" class="form-check-input" name="buzios" id="buzios">
+                              <label class="form-check-label" for="buzios">
+                                 Buzios
+                              </label>
+                           </div>
+                        </div> 
+                     </div>
+                  </fieldset>
+                  <div class="form-group row">
+                     <div class="col-lg-10 offset-lg-2">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">
+                           Enviar
+                        </button>
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+
    <div class="container">
       <div class="jumbotron d-block d-md-none text-center mb-4" style="margin-top: 89px;">
          <h5>Empresa especializada em passeios e excursões no estado do Rio de Janeiro</h5>
