@@ -96,13 +96,16 @@
                   <fieldset class="form-group">
                      <legend class="font-weight-bold">Informações Pessoais</legend>
                      <div class="form-group row">
-                        <label for="nome" class="col-form-label col-lg-2">Nome</label>
+                        <label for="nome" class="col-form-label col-lg-2 text-lg-right">Nome</label>
                         <div class="col-lg-10">
-                           <input type="text" class="form-control is-valid" placeholder="Nome" name="nome" id="nome">
+                           <input type="text" class="form-control form-control-sm" placeholder="Informe o seu nome" name="nome" id="nome">
+                           <div class="invalid-feedback">
+                              Campo de preenchimento obrigatório
+                           </div>
                         </div>
                      </div>
                      <div class="form-group row">
-                        <label class="col-form-label col-lg-2">Sexo</label>
+                        <label class="col-form-label col-lg-2 text-lg-right">Sexo</label>
                         <div class="col-lg-10" style="padding-top: 7px;">
                            <div class="form-check form-check-inline">
                               <input type="radio" id="sexo-masc" name="sexo" value="M" class="form-check-input">
@@ -112,12 +115,15 @@
                               <input type="radio" id="sexo-fem" name="sexo" value="F" class="form-check-input">
                               <label for="sexo-fem" class="form-check-label">Feminino</label>
                            </div>
+                           <div id="sexo-feedback" class="invalid-feedback">
+                              Campo de preenchimento obrigatório
+                           </div>
                         </div>
                      </div>
                      <div class="form-group row">
-                        <label for="endereco" class="col-form-label col-lg-2">Endereço</label>
+                        <label for="endereco" class="col-form-label col-lg-2 text-lg-right">Endereço</label>
                         <div class="col-lg-10">
-                           <input type="text" class="form-control is-invalid" name="endereco" placeholder="Endereço" id="endereco">
+                           <input type="text" class="form-control form-control-sm" name="endereco" placeholder="Informe seu endereço" id="endereco">
                            <div class="invalid-feedback">
                               Este campo deve ser informado
                            </div>
@@ -127,9 +133,10 @@
                   <fieldset class="form-group">
                      <legend class="font-weight-bold">Informações de Passeios e Excursões</legend>
                      <div class="form-group row">
-                        <label for="passeio" class="col-form-label col-lg-2">Passeios</label>
+                        <label for="passeio" class="col-form-label col-lg-2 text-lg-right">Passeios</label>
                         <div class="col-lg-10">
-                           <select class="form-control" id="passeio" name="passeio" multiple>
+                           <select class="form-control form-control-sm" id="passeio" name="passeio">
+                              <option value="">-- Selecione uma opção --</option>
                               <option value="1">Arcos da Lapa</option>
                               <option value="2">Ciclovia</option>
                               <option value="3">Copacabana</option>
@@ -137,10 +144,13 @@
                               <option value="5">Maracanã</option>
                               <option value="6">Pão de Açucar</option>
                            </select>
+                           <div class="invalid-feedback">
+                              Campo de preenchimento obrigatório
+                           </div>
                         </div>
                      </div>
                      <div class="form-group row">
-                        <label class="col-form-label col-lg-2">Excursões</label>
+                        <label class="col-form-label col-lg-2 text-lg-right">Excursões</label>
                         <div class="col-lg-10">
                            <div class="form-check">
                               <input type="checkbox" class="form-check-input" name="ilha" id="ilha">
@@ -160,16 +170,20 @@
                                  Buzios
                               </label>
                            </div>
+                           <div class="invalid-feedback">
+                              Campo de preenchimento obrigatório
+                           </div>
                         </div> 
                      </div>
-                  </fieldset>
-                  <div class="form-group row">
-                     <div class="col-lg-10 offset-lg-2">
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">
-                           Enviar
-                        </button>
+                     <div class="form-group row">
+                        <div class="col-lg-10 offset-lg-2">
+                           <button type="button" id="botao-enviar" class="btn btn-primary" >
+                              Enviar
+                           </button>
+                        </div>
                      </div>
-                  </div>
+                  </fieldset>
+                  
                </form>
             </div>
          </div>
