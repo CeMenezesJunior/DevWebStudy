@@ -8,8 +8,9 @@ $(function() {
         let nome_valido = validaNomeFunction()
         let sexo_valido = validaSexoFuntion()
         let passeio_valido = validaPasseioFuntion()
+        let excursoes_validas = validaExcursoesFunction()
         
-        if(nome_valido && sexo_valido && passeio_valido){
+        if(nome_valido && sexo_valido && passeio_valido && excursoes_validas){
             alert("Tudo ok!")
         }
         else{
@@ -67,6 +68,34 @@ function validaPasseioFuntion(){
     else{
         passeio.removeClass("is-invalid")
         passeio.addClass("is-valid")
+        return true
+    }
+}
+
+function validaExcursoesFunction(){
+    let ilha = $("#ilha")
+    let paraty = $("#paraty")
+    let buzios = $("#buzios")
+
+    let botoes = $("input.excursao:checked")
+    if(botoes.length === 0){
+        ilha.addClass("is-invalid")
+        ilha.removeClass("is-valid")
+        paraty.addClass("is-invalid")
+        paraty.removeClass("is-valid")
+        buzios.addClass("is-invalid")
+        buzios.removeClass("is-valid")
+        $("#excursoes-feedback").addClass("d-block")
+        return false
+    }
+    else{
+        ilha.removeClass("is-invalid")
+        ilha.addClass("is-valid")
+        paraty.removeClass("is-invalid")
+        paraty.addClass("is-valid")
+        buzios.removeClass("is-invalid")
+        buzios.addClass("is-valid")
+        $("#excursoes-feedback").removeClass("d-block")
         return true
     }
 }
