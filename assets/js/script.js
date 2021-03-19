@@ -4,6 +4,57 @@ $(function() {
     $('[data-toggle="tooltip"]').tooltip();
     $('[data-toggle="popover"]').popover();
 
+    let like = $("#like").data("like")
+    let dislike = $("#dislike").data("dislike")
+
+    let testeLike = true
+    let testeDislike = true
+
+    $("#like").text(like)
+    $("#dislike").text(dislike)
+
+    $("#like_b").click(function(){
+        if(testeLike){
+            $("#thumb-up").removeClass("far fa-thumbs-up").addClass("fas fa-thumbs-up")
+            $("#like").text(like+1)
+            $("#dislike").text(dislike)
+            testeLike = false
+            if(!testeDislike){
+                $("#thumb-down").removeClass("fas fa-thumbs-down").addClass("far fa-thumbs-down")
+                testeDislike = true
+            }
+        }
+        else{
+            $("#thumb-up").removeClass("fas fa-thumbs-up").addClass("far fa-thumbs-up")
+            $("#like").text(like)
+            $("#dislike").text(dislike)
+            testeLike = true
+        }
+        
+    })
+
+    $("#dislike_b").click(function(){
+        if(testeDislike){
+            $("#thumb-down").removeClass("far fa-thumbs-down").addClass("fas fa-thumbs-down")
+            $("#like").text(like)
+            $("#dislike").text(dislike+1)
+            testeDislike = false
+            if(!testeLike){
+                $("#thumb-up").removeClass("fas fa-thumbs-up").addClass("far fa-thumbs-up")
+                testeLike = true 
+            }
+        }
+        else{
+            $("#thumb-down").removeClass("fas fa-thumbs-down").addClass("far fa-thumbs-down")
+            $("#like").text(like)
+            $("#dislike").text(dislike)
+            testeDislike = true
+        }
+        
+    })
+
+    
+
     $("#botao-enviar").click(function(){
         let nome_valido = validaNomeFunction()
         let sexo_valido = validaSexoFuntion()
